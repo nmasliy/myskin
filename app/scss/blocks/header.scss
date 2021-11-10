@@ -1,0 +1,41 @@
+.header {
+    &__menu-btn {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 13px;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        z-index: 12;
+        border: none;
+        border-radius: 7px;
+        background-color: $accent;
+        cursor: pointer;
+        
+        span {
+            display: block;
+            width: 16px;
+            height: 2px;
+            flex-shrink: 0;
+            background-color: $white;
+            transition: .3s ease-in;
+            transform-origin: center;
+        }
+
+        &.active {
+            span {
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+                &:first-child {
+                    transform: rotate(45deg) translate(5px, 4px);
+                }
+                &:last-child {
+                    transform: rotate(-45deg) translate(4px, -3px);
+                }
+            }
+        }
+    }
+}

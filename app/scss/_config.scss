@@ -1,0 +1,224 @@
+// USER VARIABLES SECTION
+$main: #2E2E2E;
+$accent: #EAE1D7;
+$darkaccent: #D9C3A9;
+$red: #c51818;
+$white: #fff;
+$green: #2e6f1a;
+
+// GENERAL DOCUMENT STYLES
+input,
+textarea {
+    outline: transparent;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px; 
+    color: $main;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: inherit;
+    margin: 0;
+}
+
+.title {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+// Input number fix
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+// /Input number fix
+
+input, textarea {
+    display: block;
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid $main;
+    border-radius: 5px;
+    padding: 14px 12px;
+    margin: 0;
+
+    &::placeholder {
+        color: rgba($main, .4);
+    }
+
+    // Дополнительные классы для валидации
+    &.invalid {
+        color: $red;
+        border-color: $red;
+
+        &::placeholder {
+            color: $red;
+        }
+    }
+    &.valid {
+        color: $green;
+        border-color: $green;
+
+        &::placeholder {
+            color: $green;
+        }
+    }
+}
+
+button {
+    outline: transparent;
+    cursor: pointer;
+}
+
+textarea {
+    resize: none;
+    min-height: 128px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo {
+    display: block;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+
+    body {
+        overflow: hidden;
+    }
+}
+
+.block-scroll {
+    overflow: hidden;
+    height: 100%;
+
+    body {
+        overflow: hidden;
+        height: 100%;
+    }
+}
+
+.container {
+    max-width: 1580px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.main {
+    flex: 1 1 auto;
+    padding-top: 100px;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 600;
+    padding: 20px 40px;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: break-spaces;
+    border: none;
+    color: $main;
+}
+
+.socials {
+    padding: 15px 0;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding-left: 0;
+        list-style: none;
+        margin: -4px;
+    }
+    
+    li {
+        margin: 4px;
+    }
+}
+
+.pagination {
+    ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding-left: 0;
+        margin: -7px;
+    }
+    li {
+        margin: 7px;
+        background-color: rgba($main, .03);
+        border-radius: 50%;
+
+        &.active {
+            background-color: $accent;
+            color: $white;
+        }
+    }
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+    }
+
+}
+
+.preload * {
+	transition: none !important;
+}

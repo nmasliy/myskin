@@ -1,0 +1,67 @@
+@media (min-width: 1921px) {
+   
+}
+
+// Hover section
+@media (min-width: 1025px) {
+   .btn {
+      transition: all .2s;
+      &:hover {
+         // background-color: $accentHover;
+      }
+      &--blue:hover {
+         // background-color: $blueHover;
+      }
+   }
+   .socials {
+      svg, path {
+         transition: all .2s;
+      }
+      a:hover {
+         // background-color: $blue;
+
+         svg, path {
+            // fill: $accentHover;
+         }
+      }
+   }
+   .header__navigation li:hover {
+      
+   }
+
+}
+// /Hover section
+
+// Laptop
+@media (max-width: 1366px) {
+   
+}
+
+@media (max-width: 1280px) {
+
+}
+
+@media (max-width: 1200px) {
+}
+// Laptop
+
+// Tablets 
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 700px) {
+} 
+
+@media (max-width: 640px) {
+}
+// /Tablets 
+
+// Mobile phones
+@media (max-width: 420px) {
+}
+@media (max-width: 370px) {
+}
+// /Mobile phones
