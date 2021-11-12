@@ -4,6 +4,7 @@ $accent: #EAE1D7;
 $darkaccent: #D9C3A9;
 $red: #c51818;
 $white: #fff;
+$black: #000;
 $green: #2e6f1a;
 
 // GENERAL DOCUMENT STYLES
@@ -22,7 +23,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: normal;
     font-size: 18px;
-    line-height: 24px; 
+    line-height: 1.3; 
     color: $main;
 }
 
@@ -149,43 +150,37 @@ a {
 .page-wrapper {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
+    min-height: 100vh;
     position: relative;
     z-index: 1;
 }
 
 .main {
     flex: 1 1 auto;
-    padding-top: 100px;
 }
 
 .btn {
     display: inline-block;
     font-weight: 600;
-    padding: 20px 40px;
+    padding: 18px 31px;
     text-align: center;
     color: inherit;
     text-decoration: none;
     cursor: pointer;
     white-space: break-spaces;
-    border: none;
+    border: 1px solid $main;
     color: $main;
 }
 
 .socials {
-    padding: 15px 0;
-
-    ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding-left: 0;
-        list-style: none;
-        margin: -4px;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
     
     li {
-        margin: 4px;
     }
 }
 
@@ -221,4 +216,25 @@ a {
 
 .preload * {
 	transition: none !important;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 6;
+    left: 0;
+    top: 0;
+    bottom: 9px;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: .3s ease;
+    opacity: 0;
+    background-color: rgba(#272727, .5);
+
+    &.active {
+        display: block;
+        opacity: 1;
+    }
 }

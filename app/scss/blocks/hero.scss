@@ -1,0 +1,126 @@
+.hero {
+    
+    &__inner {
+        position: relative;
+        display: flex;
+        padding-top: 215px;
+        min-height: 100vh;
+        padding-bottom: 90px;
+    }
+    
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &__languages {
+        margin-bottom: 30px;
+        li {
+            position: relative;
+            color: #7f7f7f;
+            &.active {
+                color: $main;
+            }
+            & + li {
+                padding-top: 50px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    top: 10px;
+                    left: 10px;
+                    height: 30px;
+                    background-color: #7f7f7f;
+                    width: 1px;
+                }
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        margin-top: auto;
+        li {
+            margin-bottom: 30px;
+
+        }
+
+        &::after {
+            content: "";
+            width: 1px;
+            height: 91px;
+            background-color: #7f7f7f;
+        }
+    }
+
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 179px;
+        width: calc(45% - 179px);
+    }
+
+    &__caption {
+        position: relative;
+        padding-left: 50px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 1px;
+            background-color: $main;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+        font-size: 208px;
+        line-height: 283px;
+        position: relative;
+        z-index: 3;
+        margin-left: -14px;
+    }
+
+    &__subtitle {
+        margin-bottom: 60px;
+        padding-right: 80px;
+    }
+
+    &__btn {
+        margin-bottom: 30px;
+    }
+
+    &__img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 55%;
+        background-color: $accent;
+        text-align: right;
+        img {
+            position: relative;
+            height: 100%;
+            width: 665px;
+            z-index: 5;
+            margin-right: 43px;
+        }
+    }
+
+    &__location {
+        font-weight: 300;
+        font-size: 16px;
+        margin-top: auto;
+    }
+}
+

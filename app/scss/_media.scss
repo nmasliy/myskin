@@ -5,19 +5,21 @@
 // Hover section
 @media (min-width: 1025px) {
    .btn {
-      transition: all .2s;
+      transition: all .3s;
       &:hover {
-         // background-color: $accentHover;
+         background-color: $main;
+         color: $white;
       }
       &--blue:hover {
          // background-color: $blueHover;
       }
    }
-   .socials {
-      svg, path {
+   .socials, .hero__socials {
+      li, svg, path {
          transition: all .2s;
       }
-      a:hover {
+      li:hover {
+         transform: scale(1.1);
          // background-color: $blue;
 
          svg, path {
@@ -25,12 +27,44 @@
          }
       }
    }
-   .header__navigation li:hover {
-      
+   .header__navigation a {
+         position: relative;
+
+         &::before {
+            position: absolute;
+            content: "";
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            background-color: $main;
+            height: 1px;
+            transition: .3s ease-in-out;
+         }
+         &:hover::before {
+            width: 100%;
+         }
    }
 
 }
 // /Hover section
+
+@media (max-width: 1440px) {
+   .header {
+      &__btn {
+         margin-left: 25px;
+      }
+      &__languages-select {
+         margin-left: 15px;
+      }
+      &__navigation {
+         li {
+            & + li {
+               margin-left: 15px;
+            }
+         }
+      }
+   }
+}
 
 // Laptop
 @media (max-width: 1366px) {
@@ -38,7 +72,25 @@
 }
 
 @media (max-width: 1280px) {
-
+   .header {
+      &__center {
+         display: none;
+      }
+      &__socials {
+      }
+      &__languages-select {
+         display: none;
+      }
+      &__phone {
+         display: none;
+      }
+      &__btn {
+         display: none;
+      }
+      &__menu-btn {
+         display: block;
+      }
+   }
 }
 
 @media (max-width: 1200px) {

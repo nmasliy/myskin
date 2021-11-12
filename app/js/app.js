@@ -31,42 +31,40 @@ document.addEventListener("DOMContentLoaded", function () {
     function initMenu() {
         const $header = document.querySelector('.header');
         const $headerBtn = document.querySelector('.header__menu-btn');
-        const $navigationItems = document.querySelectorAll('.header__navigation ul>li>a');
-        let isInit = false;
+        const $headerClose = document.querySelector('.menu__close');
+        const $overlay = document.querySelector('.overlay');
 
-        const toggleMenu = () => {
-            $headerBtn.classList.toggle('active');
-            $header.classList.toggle('active');
-            $html.classList.toggle('overflow-hidden');
-        }
+        // setTimeout(function() {
+        //     $mobileMenu.style.display = '';
+        //     $headerOverlay.style.display = '';
+        // }, transitionDelay)
 
         const checkScreenWidth = () => {
-            // Активируем меню только на экранах <= 1024
-            if (window.innerWidth <= 1024) {
-                $headerBtn.addEventListener('click', toggleMenu);
-                $navigationItems.forEach(item => item.addEventListener('click', toggleMenu));
-                isInit = true;
+            // Активируем меню только на экранах <= 1280
+            if (window.innerWidth <= 1280) {
+                $headerClose.addEventListener('click', () => {
+                    $header.classList.remove('active');
+                    $html.classList.remove('overflow-hidden');
+                    $overlay.classList.remove('active');
+                })
+                
+                $headerBtn.addEventListener('click', () => {
+                    $header.classList.add('active');
+                    $html.classList.add('overflow-hidden');
+                    $overlay.classList.add('active');
+                })
+                $overlay.addEventListener('click', () => {
+                    $header.classList.remove('active');
+                    $html.classList.remove('overflow-hidden');
+                    $overlay.classList.remove('active');
+                })
+                
             }
         }
 
         window.addEventListener('resize', checkScreenWidth);
         
         checkScreenWidth();
-    }
-
-    function initStarRating() {
-        const $rating = document.querySelectorAll('.star-rating');
-
-        if ($rating.length > 0) {
-            $rating.forEach(item => {
-                const $ratingBar = item.querySelector('.star-rating__active');
-                const ratingValue = item.querySelector('.star-rating__value').dataset.starRatingValue || item.querySelector('.star-rating__value').textContent;
-
-                const value = (ratingValue * 10) * 2;
-
-                $ratingBar.style.width = value + '%';
-            })
-        }
     }
 
     function initReviewsSlider() {
@@ -153,10 +151,46 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function initSelects() {
+        const $selects = document.querySelectorAll('.custom-select select');
+        const $phoneSelect = document.querySelector('.header__phone select');
+        const $selectLink = document.querySelector('.header__phone-link');
+
+        if ($selects.length > 0) {
+            $selects.forEach(select => {
+                NiceSelect.bind(select);
+            })
+        }
+
+
+        if ($phoneSelect) {
+            $phoneSelect.addEventListener('change', function() {
+                const phoneNumber = this.options[this.options.selectedIndex].dataset.phone;
+                $selectLink.href = 'tel: ' + phoneNumber;
+                $selectLink.click();
+            })
+        }
+
+    }
+
+    function holdHeader() {
+        const $header = document.querySelector('.header');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset >= 120) {
+                $header.classList.add('fixed');
+            } else {
+                $header.classList.remove('fixed');
+            }
+        })
+        
+    }
+
     disableTransitionsBeforePageLoading();
+    holdHeader();
     initMenu();
     initModals();
-    initStarRating()
+    initSelects();
 
     initReviewsSlider();
 
