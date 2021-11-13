@@ -1,0 +1,45 @@
+.license {
+    padding-bottom: 200px;
+
+    &__inner {
+        display: flex;
+    }
+
+    &__panel {
+        position: relative;
+        margin-top: 147px;
+        padding-top: 127px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            top: 0;
+            width: 1px;
+            height: 97px;
+            background-color: $main;
+        }
+        span {
+            writing-mode: tb-rl;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__img {
+        width: calc(49% - 255px);
+        margin-left: 105px;
+        margin-right: 150px;
+    }
+
+    &__content {
+        width: 41%;
+        margin-top: 156px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+}

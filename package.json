@@ -41,6 +41,8 @@
 		"webpack-stream": "^6.1.1"
 	},
 	"dependencies": {
+		"fslightbox": "^3.3.0-2",
+		"imask": "^6.2.2",
 		"nice-select2": "^1.0.0"
 	}
 }

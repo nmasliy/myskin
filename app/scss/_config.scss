@@ -11,6 +11,14 @@ $green: #2e6f1a;
 input,
 textarea {
     outline: transparent;
+    border:none;
+    background-image:none;
+    background-color:transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    border-radius: 0;
 }
 
 html {
@@ -21,7 +29,7 @@ html {
 body {
     min-width: 320px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 18px;
     line-height: 1.3; 
     color: $main;
@@ -51,6 +59,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .title {
     font-size: 64px;
+    line-height: 87px;
     font-weight: bold;
 }
 
@@ -59,8 +68,8 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-btnon,
+input::-webkit-inner-spin-btnon {
     -webkit-appearance: none;
 }
 // /Input number fix
@@ -70,7 +79,6 @@ input, textarea {
     width: 100%;
     background-color: #FFFFFF;
     border: 1px solid $main;
-    border-radius: 5px;
     padding: 14px 12px;
     margin: 0;
 
@@ -157,20 +165,9 @@ a {
 
 .main {
     flex: 1 1 auto;
+    padding-top: 215px;
 }
 
-.btn {
-    display: inline-block;
-    font-weight: 600;
-    padding: 18px 31px;
-    text-align: center;
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    white-space: break-spaces;
-    border: 1px solid $main;
-    color: $main;
-}
 
 .socials {
     display: flex;
@@ -198,7 +195,7 @@ a {
         margin: 7px;
         background-color: rgba($main, .03);
         border-radius: 50%;
-
+        
         &.active {
             background-color: $accent;
             color: $white;
@@ -211,7 +208,7 @@ a {
         width: 40px;
         height: 40px;
     }
-
+    
 }
 
 .preload * {
@@ -228,13 +225,110 @@ a {
     right: 0;
     width: 100%;
     height: 100%;
-
+    
     transition: .3s ease;
     opacity: 0;
     background-color: rgba(#272727, .5);
-
+    
     &.active {
         display: block;
         opacity: 1;
+    }
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    padding: 18px 31px;
+    text-align: center;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+    overflow: hidden;
+    white-space: break-spaces;
+    border: 1px solid $main;
+    background-color: transparent;
+    color: $main;
+
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: $main;
+        top: 0;
+        left: -100%;
+        opacity: .5;
+        transition: .3s;
+        z-index: -1;
+    }
+    
+    &::after {
+        opacity: 1;
+        transition-delay: .2s;
+    }
+    &:hover {
+        color: $white;
+        &::before,
+        &::after {
+            left: 0;
+        }
+    }
+
+    &--white {
+        border-color: transparent;
+        color: $main;
+        background-color: $white;
+
+        &::before,
+        &::after {
+            background: $main;
+            z-index: 1;
+        }
+        span {
+            position: relative;
+            z-index: 3;
+        }
+        &:hover {
+            border-color: $white;
+            background-color: transparent;
+            color: $white;
+        }
+    }
+}
+
+.pulse {
+    background-color: $main;
+    border-radius: 50%;
+    animation: pulse-btn 0.7s ease-out;
+    transform: scale(0);
+    position: absolute;
+}
+
+.pulse-white {
+    background-color: $white;
+    border-radius: 50%;
+    animation: pulse-btn-white 0.7s ease-out;
+    transform: scale(0);
+    position: absolute;
+    z-index: 4;
+}
+
+@keyframes pulse-btn {
+    to {
+        transform: scale(2);
+        background-color: $white;
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-btn-white {
+    to {
+        transform: scale(2);
+        background-color: $main;
+        opacity: 0;
     }
 }

@@ -67,44 +67,75 @@ document.addEventListener("DOMContentLoaded", function () {
         checkScreenWidth();
     }
 
-    function initReviewsSlider() {
-        const $reviewsSlider = document.querySelector('.reviews-slider');
-        if ($reviewsSlider) {
-            const reviewsSlider = new Swiper('.reviews-slider', {
-                loop: true,
-                slidesPerView: 2.5,
-                spaceBetween: 30,
-                centeredSlides: true,
-                grabCursor: true,
-                slidesOffsetBefore: 500,
+    function initWorksSlider() {
+        const $worksSlider = document.querySelector('.works__slider');
+        if ($worksSlider) {
+            const worksSlider = new Swiper('.works__slider', {
+                slidesPerView: 3,
+                spaceBetween: 20,
+                pagination: {
+                    clickable: true,
+                    el: ".works__pagination",
+                    type: "fraction",
+                },
+                navigation: {
+                    nextEl: ".works__button-next",
+                    prevEl: ".works__button-prev",
+                },
                 breakpoints: {
                     320: {
-                        slidesPerView: 1.2,
-                        spaceBetween: 15,
-                        slidesOffsetBefore: 0,
-                    },
-                    420: {
-                        slidesPerView: 1.5,
-                        slidesOffsetBefore: 0,
+                        slidesPerView: 1
                     },
                     768: {
-                        slidesPerView: 2,
-                        slidesOffsetBefore: 0,
-                    },
-                    900: {
-                        slidesOffsetBefore: 0,
+                        slidesPerView: 2
                     },
                     1280: {
-                        slidesOffsetBefore: 300,
-                        slidesPerView: 2.5,
-                    },
-                    1800: {
-                        slidesOffsetBefore: 380,
-                    },
-                    1921: {
-                        slidesPerView: 'auto',
+                        slidesPerView: 3
                     },
                 },
+            });
+        }
+    }
+
+    function initMastersSlider() {
+        const $mastersSlider = document.querySelector('.masters__slider');
+        if ($mastersSlider) {
+            const mastersSlider = new Swiper('.masters__slider', {
+                slidesPerView: 3.6,
+                spaceBetween: 100,
+                watchSlidesProgress: true,
+                navigation: {
+                    nextEl: ".masters__button-next",
+                    prevEl: ".masters__button-prev",
+                },
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1
+                    },
+                    768: {
+                        slidesPerView: 2
+                    },
+                    1280: {
+                        slidesPerView: 3.6
+                    },
+                },
+            });
+        }
+    }
+
+    function initReviewsSlider() {
+        const $reviewsSlider = document.querySelector('.reviews__slider');
+        if ($reviewsSlider) {
+            const reviewsSlider = new Swiper('.reviews__slider', {
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: ".reviews__button-next",
+                    prevEl: ".reviews__button-prev",
+                },
+                fadeEffect: {
+                    crossFade: true
+                },
+                effect: "fade",
             });
         }
     }
@@ -186,12 +217,58 @@ document.addEventListener("DOMContentLoaded", function () {
         
     }
 
+    function initButtonsAnimations() {
+        const buttons = document.querySelectorAll('.btn'),
+            forEach = Array.prototype.forEach;
+            let buttonClass = 'pulse';
+
+        if (buttons.length > 0) {
+            forEach.call(buttons, function (b) {
+                b.addEventListener('click', addElement);
+                if (b.classList.contains('btn--white')) buttonClass = 'pulse-white';
+                else buttonClass = 'pulse';
+            });
+            function addElement(e) {
+                var addDiv  = document.createElement('div'),
+                    mValue  = Math.max(this.clientWidth, this.clientHeight),
+                    rect    = this.getBoundingClientRect();
+                    sDiv    = addDiv.style,
+                    px      = 'px';
+    
+                sDiv.width  = sDiv.height = mValue + px;
+                sDiv.left  = e.clientX - rect.left - (mValue / 2) + px;
+                sDiv.top   = e.clientY - rect.top - (mValue / 2) + px;
+
+    
+                addDiv.classList.add(buttonClass);
+                this.appendChild(addDiv);
+            }
+        }
+        
+    }
+
+    function initPhoneMasks() {
+        const $phones = document.querySelectorAll('.phone-mask');
+
+        $phones.forEach(item => {
+            IMask(item, {
+                    mask: '+{38}(000)000-00-00'
+            });
+        })
+
+    }
+
     disableTransitionsBeforePageLoading();
     holdHeader();
     initMenu();
+
     initModals();
     initSelects();
+    initPhoneMasks();
 
+    initWorksSlider();
+    initMastersSlider();
     initReviewsSlider();
 
+    initButtonsAnimations();
 });

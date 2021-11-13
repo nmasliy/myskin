@@ -1,0 +1,38 @@
+.benefits {
+    padding: 150px 0;
+    background-color: #212020;
+    color: $white;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -40px;
+    }
+
+    &__item {
+        position: relative;
+        margin: 40px;
+        padding-left: 30px;
+        width: calc(25% - 80px);
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 5px;
+            height: 100px;
+            width: 1px;
+            background-color: $white;
+        }
+    }
+
+    &__name {
+        margin-bottom: 30px;
+        font-weight: 600;
+    }
+
+    &__text {
+        font-size: 16px;
+        line-height: 22px;
+    }
+}

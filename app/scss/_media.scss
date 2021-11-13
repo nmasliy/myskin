@@ -4,14 +4,12 @@
 
 // Hover section
 @media (min-width: 1025px) {
-   .btn {
-      transition: all .3s;
-      &:hover {
-         background-color: $main;
-         color: $white;
-      }
-      &--blue:hover {
-         // background-color: $blueHover;
+   .footer {
+      &__navigation li {
+         transition: .1s ease;
+         &:hover {
+            color: $black;
+         }
       }
    }
    .socials, .hero__socials {

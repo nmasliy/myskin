@@ -1,0 +1,97 @@
+.reviews {
+    padding-top: 100px;
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        width: 40%;
+        padding-bottom: 100px;
+        padding-top: 60px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+    }
+
+    &__text {
+        color: #787676;
+        margin-bottom: 100px;
+    }
+
+    &__socials {
+        position: relative;
+        justify-content: flex-start;
+        padding-left: 30px;
+
+        &::before {
+            position: absolute;
+            content: "";
+            left: -100vw;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 1px;
+            background-color: $main;
+            width: 100vw;
+        }
+        
+        li + li {
+            margin-left: 30px;
+        }
+    }
+
+    &__wrapper {
+        background: url('../images/dist/reviews-bg.png') bottom -40px right 240px no-repeat;
+        background-color: #fcfcfc;
+    }
+
+    &__slider-wrapper {
+        display: flex;
+        align-items: center;
+    }
+    
+    &__slider {
+        max-width: 400px;
+        margin-left: 30px;
+        margin-right: 30px;
+        width: 100%;
+        margin-top: -100px;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            background: url('../images/dist/iphone.png') center no-repeat;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__slider-item {
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+        img {
+            border-radius: 30px;
+        }
+    }
+
+    &__button-prev,
+    &__button-next {
+        transition: .3s ease-in-out;
+        cursor: pointer;
+        margin-bottom: 125px;
+        circle {
+            transition: .3s ease-in-out;
+        }
+        &.swiper-button-disabled {
+            opacity: .4;
+            circle {
+                fill: #EAE1D7;
+            }
+        }
+    }
+} 

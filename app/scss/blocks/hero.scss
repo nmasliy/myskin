@@ -3,8 +3,7 @@
     &__inner {
         position: relative;
         display: flex;
-        padding-top: 215px;
-        min-height: 100vh;
+        min-height: calc(100vh - 215px);
         padding-bottom: 90px;
     }
     
@@ -68,6 +67,7 @@
     &__caption {
         position: relative;
         padding-left: 50px;
+        font-weight: 400;
 
         &::before {
             position: absolute;
@@ -93,6 +93,7 @@
     &__subtitle {
         margin-bottom: 60px;
         padding-right: 80px;
+        font-weight: 400;
     }
 
     &__btn {
@@ -102,9 +103,9 @@
     &__img {
         position: absolute;
         right: 0;
-        top: 0;
+        top: -215px;
         bottom: 0;
-        height: 100%;
+        height: calc(100% + 215px);
         width: 55%;
         background-color: $accent;
         text-align: right;
@@ -113,12 +114,11 @@
             height: 100%;
             width: 665px;
             z-index: 5;
-            margin-right: 43px;
+            margin-right: 33px;
         }
     }
 
     &__location {
-        font-weight: 300;
         font-size: 16px;
         margin-top: auto;
     }
