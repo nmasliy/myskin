@@ -165,7 +165,7 @@ a {
 
 .main {
     flex: 1 1 auto;
-    padding-top: 115px;
+    padding-top: 150px;
     &--index {
         padding-top: 215px;
     }
@@ -315,6 +315,35 @@ a {
     transform: scale(0);
     position: absolute;
     z-index: 4;
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    li {
+        &:hover {
+            text-decoration: underline;
+        }
+        & + li {
+            margin-left: 20px;
+            padding-left: 20px;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                left: 0;
+                top: 0;
+                background-color: $main;
+                height: 22px;
+                transform: rotate(25deg);
+                width: 1px;
+            }
+        }
+        &:last-child {
+            color: #787676;
+        }
+    }
 }
 
 @keyframes pulse-btn {

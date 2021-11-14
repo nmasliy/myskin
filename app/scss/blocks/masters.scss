@@ -1,11 +1,8 @@
 .masters {
     padding-bottom: 150px;
 
-    &__inner {
-    }
-
     &__title {
-        margin-bottom: 100px;
+        margin-bottom: 90px;
     }
 
     &__wrapper {
@@ -54,8 +51,6 @@
     }
 
     &__subtitle {
-        display: inline-block;
-        vertical-align: middle;
         margin-bottom: 5px;
         &:last-child {
             margin-bottom: 0;
@@ -84,5 +79,26 @@
 
     &__button-next {
         margin-left: 100px;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -45px -25px;
+        overflow: hidden;
+    }
+}
+
+.masters-page {
+    padding-bottom: 50px;
+    .masters__img {
+        img {
+            max-height: 540px;
+            height: 540px;
+        }
+    }
+    &__item {
+        margin: 45px 25px;
+        width: calc(33.333% - 50px);
     }
 }
