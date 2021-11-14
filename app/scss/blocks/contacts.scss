@@ -68,5 +68,8 @@
     &__map {
         margin-left: 94px;
         width: calc(68.666% - 47px);
+        iframe {
+            width: 100%;
+        }
     }
 }
