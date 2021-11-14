@@ -5,6 +5,10 @@
         display: flex;
     }
 
+    &__text p:last-child {
+        margin-bottom: 0;
+    }
+
     &__panel {
         position: relative;
         margin-top: 147px;

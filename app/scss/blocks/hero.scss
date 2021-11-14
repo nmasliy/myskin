@@ -3,7 +3,7 @@
     &__inner {
         position: relative;
         display: flex;
-        min-height: calc(100vh - 215px);
+        height: 100%;
         padding-bottom: 90px;
     }
     
@@ -20,6 +20,7 @@
             color: #7f7f7f;
             &.active {
                 color: $main;
+                font-weight: 600;
             }
             & + li {
                 padding-top: 50px;
@@ -73,8 +74,8 @@
             position: absolute;
             content: "";
             left: 0;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 10px;
+            transform: none;
             width: 30px;
             height: 1px;
             background-color: $main;

@@ -34,10 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const $headerClose = document.querySelector('.menu__close');
         const $overlay = document.querySelector('.overlay');
 
-        // setTimeout(function() {
-        //     $mobileMenu.style.display = '';
-        //     $headerOverlay.style.display = '';
-        // }, transitionDelay)
 
         const checkScreenWidth = () => {
             // Активируем меню только на экранах <= 1280
@@ -84,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 breakpoints: {
                     320: {
-                        slidesPerView: 1
+                        // slidesPerView: 1
                     },
-                    768: {
+                    600: {
                         slidesPerView: 2
                     },
-                    1280: {
+                    900: {
                         slidesPerView: 3
                     },
                 },
@@ -110,14 +106,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 breakpoints: {
                     320: {
-                        slidesPerView: 1
+                        slidesPerView: 1.3
                     },
-                    768: {
-                        slidesPerView: 2
+                    640: {
+                        slidesPerView: 2.6,
+                        spaceBetween: 20,
+                    },
+                    1024: {
+                        spaceBetween: 40,
+                        slidesPerView: 2.6,
                     },
                     1280: {
-                        slidesPerView: 3.6
-                    },
+                        slidesPerView: 3.6,
+                        spaceBetween: 100,
+                    }
                 },
             });
         }

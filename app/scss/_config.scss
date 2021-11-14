@@ -165,7 +165,10 @@ a {
 
 .main {
     flex: 1 1 auto;
-    padding-top: 215px;
+    padding-top: 115px;
+    &--index {
+        padding-top: 215px;
+    }
 }
 
 
@@ -176,9 +179,6 @@ a {
     flex-wrap: wrap;
     padding-left: 0;
     list-style: none;
-    
-    li {
-    }
 }
 
 .pagination {
