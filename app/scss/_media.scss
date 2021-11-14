@@ -4,6 +4,18 @@
 
 // Hover section
 @media (min-width: 1025px) {
+   .services__link {
+      transition: .3s ease-in-out;
+      svg {
+         transition: .3s ease-in-out;
+      }
+      &:hover {
+         color: $black;
+         svg {
+            transform: translateX(-7px);
+         }
+      }
+   }
    .footer {
       &__navigation li {
          transition: .1s ease;
@@ -18,11 +30,6 @@
       }
       li:hover {
          transform: scale(1.1);
-         // background-color: $blue;
-
-         svg, path {
-            // fill: $accentHover;
-         }
       }
    }
    .header__navigation a {
@@ -119,7 +126,7 @@
 
 // Laptop
 @media (max-width: 1366px) {
-   .master {
+   .section-hero {
       min-height: 600px;
       &__position {
          margin-top: 125px;
@@ -183,7 +190,7 @@
          }
       }
    }
-   .title {
+   .title, .section-text h1 {
       font-size: 56px;
       line-height: 70px;
    }
@@ -361,11 +368,32 @@
    .main:not(.main--index) {
       padding-top: 130px;
    }
-   .master {
+   .section-text h1 {
+      margin-bottom: 50px;
+   }
+   .service-hero {
+      .about__link {
+         width: 100%;
+         align-items: center;
+         justify-content: space-between;
+      }
+   }
+   .section-hero {
+      &__buttons {
+         flex-direction: column;
+         align-items: flex-start;
+         a + a {
+            margin-top: 30px;
+            margin-left: 0;
+         }
+         .about__link-icon {
+            margin-left: 15px;
+         }
+      }
       &__img {
          width: 30%;
-         top: 30px;
-         height: calc(100% - 30px);
+         top: 42px;
+         height: calc(100% - 133px);
       }
       &__title {
          font-size: 60px;
@@ -449,7 +477,7 @@
          font-size: 16px;
       }
    }
-   .title {
+   .title, .section-text h1 {
       font-size: 48px;
       line-height: 1.2;
    }
@@ -511,6 +539,12 @@
 }
 
 @media (max-width: 768px) {
+   .service-hero {
+      margin-bottom: 50px;
+   }
+   .services-list-page {
+      padding-bottom: 50px;
+   }
    .services {
       &__title {
          margin-bottom: 40px;
@@ -525,7 +559,7 @@
          width: calc(50% - 30px);
       }
    }
-   .master {
+   .section-hero {
       min-height: 500px;
       &__position {
          margin-top: 85px;
@@ -605,7 +639,7 @@
    .works {
       padding: 60px 0;
    }
-   .title {
+   .title, .section-text h1 {
       font-size: 36px;
       line-height: 49px;
    }
@@ -768,6 +802,20 @@
    .works {
       &__item {
          width: 100% !important;
+         height: 366px;
+      }
+      .works__item--1 .works__img {
+         height: 366px;
+      }
+      .works__item--2 .works__img {
+         height: 173px;
+      }
+      .works__item--3 .works__img:first-child {
+         height: 190px;
+      }
+
+      .works__item--3 .works__img:last-child {
+         height: 156px;
       }
 
    }

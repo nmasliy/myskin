@@ -57,6 +57,29 @@ h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
 
+
+.section-text {
+    h1 {
+        font-size: 64px;
+        line-height: 87px;
+        font-weight: bold;
+        margin-bottom: 100px;
+    }
+    strong, b {
+        font-weight: 600;
+    }
+    p {
+        margin: 20px 0;
+    }
+    ul {
+        li {
+            &::before {
+                content: '-';
+            }
+        }
+    }
+}
+
 .title {
     font-size: 64px;
     line-height: 87px;

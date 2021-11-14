@@ -1,6 +1,14 @@
-.master {
+.section-hero {
     position: relative;
     min-height: 785px;
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        a + a {
+            margin-left: 55px;
+        }
+    }
 
     &__position {
         position: relative;
@@ -34,4 +42,9 @@
         background-color: $accent;
         z-index: -1;
     }
+}
+
+.service-hero {
+    padding-bottom: 0;
+    margin-bottom: 150px;
 }
