@@ -317,6 +317,9 @@
 }
 
 @media (max-width: 1100px) {
+   .modal__inner {
+      padding: 30px;
+   }
    .services {
       &__item {
          width: calc(50% - 50px);
@@ -824,6 +827,25 @@
 
 // Mobile phones
 @media (max-width: 480px) {
+   .modal {
+      &__close {
+         right: 0;
+      }
+      &__container {
+         padding-left: 10px;
+         padding-right: 10px;
+      }
+      .lead__title {
+         font-size: 30px;
+         line-height: 1.2;
+      }
+      .lead__text {
+         margin-bottom: 35px;
+      }
+      .lead__item {
+         margin-bottom: 30px;
+      }
+   }
    .masters-page {
       .masters__img img {
          max-height: 400px;
