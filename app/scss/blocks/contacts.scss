@@ -2,6 +2,10 @@
     padding-top: 150px;
     padding-bottom: 100px;
     background: url('../images/dist/contacts-bg.png') top 93px left 36% no-repeat;
+
+    &-page {
+        padding-top: 0;
+    }
     
     &__inner {
         display: flex;
@@ -59,9 +63,6 @@
         li + li {
             margin-left: 20px;
         }
-    }
-
-    &__btn {
     }
 
     &__map {
