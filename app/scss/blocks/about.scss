@@ -8,11 +8,24 @@
 
     &__img {
         margin-right: 150px;
-        width: calc(50% - 75px);
+        width: calc(47% - 75px);
+        img {
+            width: 100%;
+        }
+
+        &--master {
+            img {
+                max-height: 710px;
+            }
+        }
     }
 
     &__content {
         width: calc(50% - 75px);
+
+        &--master {
+            width: calc(54% - 75px);
+        }
     }
 
     &__title {
@@ -21,6 +34,9 @@
 
     &__text {
         margin-bottom: 100px;
+        p:last-child {
+            margin-bottom: 0;
+        }
     }
 
     &__link {
@@ -64,6 +80,35 @@
             }
         }
     }
+
+    &__certificates {
+        margin: 0 -10px;
+        display: flex;
+    }
+
+    &__certificates-item {
+        margin: 0 10px;
+        width: calc(50% - 20px);
+        background: #f8f8f8;
+        border: 1px solid transparent;
+        transition: .3s ease-in-out;
+        &:hover {
+            border-color: $accent;
+        }
+        a {
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+        }
+        svg {
+            flex-shrink: 0;
+        }
+        span {
+            margin-left: 20px;
+            margin-right: auto;
+        }
+    }
+
 }
 
 @keyframes pulse {

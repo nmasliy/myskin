@@ -318,10 +318,9 @@ a {
 }
 
 .breadcrumbs {
-    display: flex;
-    flex-wrap: wrap;
     margin-bottom: 50px;
     li {
+        display: inline;
         &:hover {
             text-decoration: underline;
         }
