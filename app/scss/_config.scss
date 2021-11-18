@@ -259,6 +259,10 @@ a {
     }
 }
 
+.slider-button {
+    position: relative;
+}
+
 .btn {
     position: relative;
     display: inline-block;
@@ -323,6 +327,14 @@ a {
     }
 }
 
+.pulse-slider {
+    background-color: $main;
+    border-radius: 50%;
+    animation: pulse-slider 0.7s ease-out;
+    transform: scale(0);
+    position: absolute;
+}
+
 .pulse {
     background-color: $main;
     border-radius: 50%;
@@ -366,6 +378,14 @@ a {
         &:last-child {
             color: #787676;
         }
+    }
+}
+
+@keyframes pulse-slider {
+    to {
+        transform: scale(1);
+        background-color: $white;
+        opacity: 0;
     }
 }
 

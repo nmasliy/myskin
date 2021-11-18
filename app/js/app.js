@@ -210,6 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function holdHeader() {
         const $header = document.querySelector('.header');
 
+        if ($header.classList.contains('header--index')) return;
+
         window.addEventListener('scroll', () => {
             if (window.pageYOffset >= 120) {
                 $header.classList.add('fixed');
@@ -222,6 +224,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function initButtonsAnimations() {
         const buttons = document.querySelectorAll('.btn'),
+            sliderButtons = document.querySelectorAll('.slider-button'),
             forEach = Array.prototype.forEach;
             let buttonClass = 'pulse';
 
@@ -231,21 +234,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (b.classList.contains('btn--white')) buttonClass = 'pulse-white';
                 else buttonClass = 'pulse';
             });
-            function addElement(e) {
-                var addDiv  = document.createElement('div'),
-                    mValue  = Math.max(this.clientWidth, this.clientHeight),
-                    rect    = this.getBoundingClientRect();
-                    sDiv    = addDiv.style,
-                    px      = 'px';
-    
-                sDiv.width  = sDiv.height = mValue + px;
-                sDiv.left  = e.clientX - rect.left - (mValue / 2) + px;
-                sDiv.top   = e.clientY - rect.top - (mValue / 2) + px;
+        }
+        if (sliderButtons.length > 0) {
+            forEach.call(sliderButtons, function (b) {
+                buttonClass = 'pulse-slider';
+                b.addEventListener('click', addElement);
+            });
+        }
+        function addElement(e) {
+            var addDiv  = document.createElement('div'),
+                mValue  = Math.max(this.clientWidth, this.clientHeight),
+                rect    = this.getBoundingClientRect();
+                sDiv    = addDiv.style,
+                px      = 'px';
 
-    
-                addDiv.classList.add(buttonClass);
-                this.appendChild(addDiv);
-            }
+            sDiv.width  = sDiv.height = mValue + px;
+            sDiv.left  = e.clientX - rect.left - (mValue / 2) + px;
+            sDiv.top   = e.clientY - rect.top - (mValue / 2) + px;
+
+
+            addDiv.classList.add(buttonClass);
+            this.appendChild(addDiv);
         }
         
     }
@@ -261,10 +270,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    function initSmoothScroll() {
+        SmoothScroll({
+            // Время скролла 400 = 0.4 секунды
+            animationTime    : 800,
+            // Размер шага в пикселях 
+            stepSize         : 75,
+
+            // Дополнительные настройки:
+            
+            // Ускорение 
+            accelerationDelta : 30,  
+            // Максимальное ускорение
+            accelerationMax   : 2,   
+
+            // Поддержка клавиатуры
+            keyboardSupport   : true,  
+            // Шаг скролла стрелками на клавиатуре в пикселях
+            arrowScroll       : 50,
+
+            // Pulse (less tweakable)
+            // ratio of "tail" to "acceleration"
+            pulseAlgorithm   : true,
+            pulseScale       : 4,
+            pulseNormalize   : 1,
+
+            // Поддержка тачпада
+            touchpadSupport   : true,
+        })
+
+    }
+
     disableTransitionsBeforePageLoading();
     holdHeader();
     initMenu();
 
+    initSmoothScroll();
     initModals();
     initSelects();
     initPhoneMasks();

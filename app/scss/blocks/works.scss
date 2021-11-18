@@ -10,7 +10,7 @@
 
     &__title-caption {
         margin-left: 60px;
-        color: #E1DFDF;
+        color: #7a7a7a;
         font-weight: 400;
         a {
             color: #c99455;
@@ -73,6 +73,13 @@
     &__img {
         display: block;
         height: 100%;
+
+        &:hover {
+            &::before {
+                opacity: 1;
+            }
+        }
+        
         img {
             height: 100%;
             width: 100%;

@@ -1,6 +1,11 @@
 .section-hero {
     position: relative;
-    min-height: 785px;
+    
+    &__inner {
+        min-height: calc(100vh - 150px);
+        position: relative;
+        padding-bottom: 50px;
+    }
 
     &__buttons {
         display: flex;

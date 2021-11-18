@@ -118,6 +118,7 @@
     }
 
     &__navigation {
+        font-weight: 400;
         ul {
             display: flex;
             flex-wrap: wrap;
@@ -167,7 +168,16 @@
         }
         .nice-select-dropdown {
             left: -60px;
-            padding-left: 41px;
+            padding-left: 0;
+            li {
+                padding-left: 86px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+            .list {
+                padding-left: 0;
+            }
         }
         &-link {
             display: none;
