@@ -1,3 +1,6 @@
+:root {
+    --animate-duration: 1300ms;
+}
 // USER VARIABLES SECTION
 $main: #2E2E2E;
 $accent: #EAE1D7;
@@ -189,6 +192,8 @@ a {
 .main {
     flex: 1 1 auto;
     padding-top: 150px;
+    overflow: hidden;
+
     &--index {
         padding-top: 215px;
     }
