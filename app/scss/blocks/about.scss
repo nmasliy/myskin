@@ -42,7 +42,7 @@
     &__link {
         display: inline-flex;
         align-items: center;
-
+        
         span {
             font-weight: 600;
         }
@@ -57,6 +57,7 @@
             background-color: $accent;
             border-radius: 50%;
             margin-left: 30px;
+            flex-shrink: 0;
             box-shadow: 0 0 0 rgba(#D9C3A9, 1);
             animation: pulse 2s infinite;
 
