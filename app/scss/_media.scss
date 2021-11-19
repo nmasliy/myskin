@@ -927,13 +927,6 @@
    }
 }
 @media (max-width: 420px) {
-   .about {
-      &__img img {
-         max-height: 330px;
-      }
-   }
-}
-@media (max-width: 370px) {
    .hero {
       &__bg {
          width: 23%;
@@ -942,7 +935,13 @@
          width: 77%;
       }
    }
+   .about {
+      &__img img {
+         max-height: 330px;
+      }
+   }
 }
+
 
 @media (max-width: 360px) {
    .reviews {

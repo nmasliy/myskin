@@ -20,6 +20,10 @@
         padding-right: 20px;
         flex-shrink: 0;
 
+        img {
+            width: 110px;
+        }
+
         &::after {
             position: absolute;
             content: "";
